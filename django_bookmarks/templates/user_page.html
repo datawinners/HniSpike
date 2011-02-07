@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}{{ username }}{% endblock %}
+{% block head %}Bookmarks for {{ username }}{% endblock %}
+{% block content %}
+    {% if bookmarks %}
+        <div id='export-nav'>
+        <a href="/export">Export</a>
+        </div>
+        {% for bookmark in bookmarks %}
+            <li>
+            <a href="{{ bookmark.link.url }}"> {{ bookmark.title }}</a>
+            </li>
+        {% endfor %}
+    {% else %}
+        <p> No Bookmarks found</p>
+    {% endif %}
+{% endblock %}
+
+

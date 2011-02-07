@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>
+        Django Bookmarks | {% block title %}{% endblock %}
+    </title>
+<link rel="stylesheet" href="/site_media/style.css" type="text/css"/>
+</head>
+<body>
+<div id="nav">
+    <a href="/">home</a>|
+    {% if user.is_authenticated %}
+        welcome {{ user.username }}
+        (<a href="/logout">Logout</a> )
+    {% else %}
+        <a href="/login">Login</a>|
+        <a href="/register">Register</a>
+    {% endif %}
+</div>
+<h1>{% block head %}{% endblock %}</h1>
+{% block content %}{% endblock %}
+</body>
+</html>

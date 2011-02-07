@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}
+    Welcome to Bookmark apps
+{% endblock %}
+
+{% block head %}
+    Welcome to Django Bookmark apps
+{% endblock %}
+
+{% block content%}
+{% if user.username %}
+    <p>Welcome {{ user.username }}
+    {{ page_body }}</p>
+{% else %}
+<p>Welcome anonymous user. You need to <a href="/login/">login</a> to access functionality</p>
+{% endif %}
+{% endblock %}
