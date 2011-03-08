@@ -1,8 +1,6 @@
 from uuid import uuid4
-from couchdb.client import Document
-from couchdb.mapping import TextField, IntegerField, DictField, ListField
+from couchdb.mapping import TextField, IntegerField, DictField, ListField, Document
 from django.db import models
-import couch
 from formservice.connection import Connection
 
 
@@ -43,23 +41,25 @@ class Question(FormDocument):
     description =TextField()
     answer_data_type = IntegerField()
 
-    def __init__(self,desc,ans_data_type):
-        self.description = desc
-        self.answer_data_type = ans_data_type
+    def __init__(self, *args, **kwargs):
+        FormDocument.__init__(self, *args, **kwargs)
 
 
+    def check(self):
+        return self.description
+    
 
-class Questionnaire(FormDocument):
-    question_list = ListField()
-
-    def __init__(self,q_list):
-        self.question_list = q_list
+#class Questionnaire(FormDocument):
+#    #question_list = ListField()
+#
+#    def __init__(self,q_list):
+#        self.question_list = q_list
 
 class Dictionary:
     dictionary = {"age":1,"name":2}
 
     def validate(self,key):
-        return key in dictionary
+        return key in self.dictionary
 
     def return_value(self,key):
         return self.dictionary[key]
