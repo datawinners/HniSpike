@@ -1,5 +1,6 @@
 from uuid import uuid4
 from couchdb.client import Document
+from couchdb.mapping import TextField, IntegerField
 from django.db import models
 import couch
 from formservice.connection import Connection
@@ -37,4 +38,9 @@ class FormDocument(Document):
         return Document.query(Connection().db, map_function,
                               reduce_func, *args, **kwargs)
 
+class Question(FormDocument):
+
+    description =TextField()
+    answer_data_type = IntegerField()
+    
     
