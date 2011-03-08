@@ -5,6 +5,7 @@ from django.conf.urls.defaults import *
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+
     # Example:
     # (r'^formservicespike/', include('formservicespike.foo.urls')),
 
