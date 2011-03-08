@@ -1,4 +1,5 @@
 # Django settings for formservicespike project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -82,7 +83,7 @@ ROOT_URLCONF = 'formservicespike.urls'
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
-TEMPLATE_DIRS = ('/home/akshaysn/code/HniSpike/formservicespike/templates',)
+TEMPLATE_DIRS = os.path.join(os.path.dirname(__file__),'templates')
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -91,7 +92,6 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     #'django-nose',
-
     'formservice',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
