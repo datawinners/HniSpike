@@ -12,9 +12,9 @@ def process_form(request):
         if not d.validate(datatype):
             return HttpResponse("muhahahaha")
         else:
-            q = Question(query_dict.__getitem__("question"),d.return_value(datatype))
+            q = Question(desc=query_dict.__getitem__("question"),ans_data_type=d.return_value(datatype))
             q.save()
-        return render_to_response('Thank you')
+        return HttpResponse("Thank you")
 
 def main_form(request):
        return render_to_response('formservice/index.html')

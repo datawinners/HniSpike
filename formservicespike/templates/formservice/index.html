@@ -4,8 +4,8 @@
 <script src="http://code.jquery.com/jquery-1.5.js"></script>
 <script type="text/javascript">
     function add_question() {
-    $('#question').append('<input type=text name=\"question\" />')
-    $('#answer_type').append('<input type=text name=\"answer_type\" />')
+    $('#question1').append('<input type=\"text\" name=\"question\"></input>')
+    $('#answer_type1').append('<input type=\"text\" name=\"answer_type\" ></input>')
     }
 </script>
 </head>
@@ -18,8 +18,8 @@
 
     <form action="/submit/" method="post" >
         <input type="button" value="Add Question" onclick="add_question()"/>
-        <p><span id="question">&nbsp;</span> <span id="answer_type">&nbsp;</span></p>
-        <input type="submit" value="submit" onclick="add_question()"/>
+        <p><span id="question1">&nbsp;</span> <span id="answer_type1">&nbsp;</span></p>
+        <input type="submit" value="submit" />
     </form>
 </body>
 </html>
