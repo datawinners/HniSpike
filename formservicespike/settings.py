@@ -93,7 +93,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
-    'django-nose',
+    #'django-nose',
     'formservice',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
