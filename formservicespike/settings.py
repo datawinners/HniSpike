@@ -80,12 +80,9 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'formservicespike.urls'
 
-TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-)
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+TEMPLATE_DIRS = ('/home/akshaysn/code/HniSpike/formservicespike/templates',)
 
 INSTALLED_APPS = (
     'django.contrib.auth',

@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<script src="http://code.jquery.com/jquery-1.5.js"></script>
+<script type="text/javascript">
+    function add_question() {
+    $('#Question').append('<input type=text/>')
+    $('#Answer').append('<input type=text/>')
+    }
+
+</script>
+</head>
+<body>
+<head>
+    <title>Basic Form Builder</title>
+</head>
+<body>
+============    WELCOME TO THE BASIC FORM BUILDER SERVICE    ============
+
+    <form method="post" >
+{#        <span id="Question">Question &emsp; &emsp;</span>#}
+{#        <span id="Code">Answer Code &emsp; &emsp;</span>#}
+{#        <span id="Answer_type">Answer Type &emsp; &emsp;</span>#}
+        <input type="button" value="Add Question" onclick="add_question()"/>
+        <p><span id="Question">&nbsp;</span> <span id="Answer">&nbsp;</span></p>
+{#        <p>Yes!!</p>#}
+    </form>
+</body>
+</html>
