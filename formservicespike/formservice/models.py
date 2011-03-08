@@ -5,12 +5,12 @@ from django.db import models
 import couch
 from formservice.connection import Connection
 
+
 class FormDocument(Document):
     """
         Common struture for all Document object we are retriving from
         CouchDb for the datadict.
     """
-
     def __init__(self, *args, **kwargs):
         Document.__init__(self, *args, **kwargs)
         if not getattr(self, 'id', None):
