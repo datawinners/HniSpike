@@ -4,10 +4,9 @@
 <script src="http://code.jquery.com/jquery-1.5.js"></script>
 <script type="text/javascript">
     function add_question() {
-    $('#Question').append('<input type=text/>')
-    $('#Answer').append('<input type=text/>')
+    $('#question').append('<input type=text name=\"question\" />')
+    $('#answer_type').append('<input type=text name=\"answer_type\" />')
     }
-
 </script>
 </head>
 <body>
@@ -17,13 +16,10 @@
 <body>
 ============    WELCOME TO THE BASIC FORM BUILDER SERVICE    ============
 
-    <form method="post" >
-{#        <span id="Question">Question &emsp; &emsp;</span>#}
-{#        <span id="Code">Answer Code &emsp; &emsp;</span>#}
-{#        <span id="Answer_type">Answer Type &emsp; &emsp;</span>#}
+    <form action="/submit/" method="post" >
         <input type="button" value="Add Question" onclick="add_question()"/>
-        <p><span id="Question">&nbsp;</span> <span id="Answer">&nbsp;</span></p>
-{#        <p>Yes!!</p>#}
+        <p><span id="question">&nbsp;</span> <span id="answer_type">&nbsp;</span></p>
+        <input type="submit" value="submit" onclick="add_question()"/>
     </form>
 </body>
 </html>

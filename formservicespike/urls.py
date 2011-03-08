@@ -7,7 +7,7 @@ from formservice.views import *
 
 urlpatterns = patterns('',
                        (r'^$', main_form),
-                       (r'^/submit$', process_form)
+                       (r'^submit/$', process_form)
     # Example:
     # (r'^formservicespike/', include('formservicespike.foo.urls')),
 
