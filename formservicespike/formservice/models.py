@@ -1,6 +1,7 @@
 from uuid import uuid4
 from couchdb.mapping import TextField, IntegerField, DictField, ListField, Document
 from django.db import models
+
 from formservice.connection import Connection
 
 
@@ -51,6 +52,9 @@ class Question(FormDocument):
 
 #class Questionnaire(FormDocument):
 #    #question_list = ListField()
+#
+#class Questionnaire(FormDocument):
+#    question_list = ListField()
 #
 #    def __init__(self,q_list):
 #        self.question_list = q_list
