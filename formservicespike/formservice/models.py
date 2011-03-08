@@ -42,18 +42,25 @@ class Question(FormDocument):
 
     description =TextField()
     answer_data_type = IntegerField()
-    dictionary = {1:"age",2:"name"}
+
     def __init__(self,desc,ans_data_type):
         self.description = desc
         self.answer_data_type = ans_data_type
 
-    def validate(self):
-        return self.answer_data_type in dictionary
-    
 
-class Questionnare(FormDocument):
+
+class Questionnaire(FormDocument):
     question_list = ListField()
 
     def __init__(self,q_list):
         self.question_list = q_list
 
+class Dictionary:
+    dictionary = {"age":1,"name":2}
+
+    def validate(self,key):
+        return key in dictionary
+
+    def return_value(self,key):
+        return self.dictionary[key]
+        
