@@ -9,9 +9,9 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
-DATABASE_NAME = 'datadict',
-SERVER_ADDRESS = 'http://localhost',
-SERVER_PORT = '5984',
+DATABASE_NAME = 'datadict'
+SERVER_ADDRESS = 'http://localhost'
+SERVER_PORT = '5984'
 
 DATABASES = {
     'default': {
