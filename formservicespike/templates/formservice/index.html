@@ -6,8 +6,8 @@
     $(document).ready(function() {
         var count = 0;
         $('#AddQuestion').click(function () {
-        $('#question1').append('Question: <input type=text name="question' + ++count + '"></input>&nbsp;&nbsp;')
-        $('#question1').append('Answer type: <input type=text name="answer_type'+ count +'"></input><br/>')
+        $('#question').append('Question: <input type=text name="description' + ++count + '"></input>&nbsp;&nbsp;')
+        $('#question').append('Answer type: <input type=text name="answer_type'+ count +'"></input><br/>')
         });
         $('#Submit').click(function(){
             $(this).disable();
@@ -24,7 +24,7 @@
 
     <form action="/submit/" method="post" >
         <input type="button" value="Add Question"  id="AddQuestion"/>
-        <p><span id="question1"></span></p>
+        <p><span id="question"></span></p>
         <input type="submit" value="submit" id='Submit'/>
     </form>
 </body>
