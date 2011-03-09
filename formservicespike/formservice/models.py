@@ -66,7 +66,7 @@ class Questionnaire(FormDocument):
         FormDocument.__init__(self, *args, **kwargs)
 
     def check(self):
-         return  self.question_list[0].description
+         return  self.description
 
 
 class Dictionary:

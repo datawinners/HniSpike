@@ -12,5 +12,7 @@ class test_question:
         q2 = Question(description="abcd",answer_data_type = 1)
         qlist = [q1,q2]
         q=Questionnaire(question_list=qlist,description="abcdef")
-        #q.save()
-        assert q.check()=="wsdf"
+#        q.save()
+#        w=q.load(q.id)
+        assert q.check() == "abcdef"
+#        assert w.get('description','no') =="abcdef"

@@ -1,10 +1,23 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
         "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<script src="http://code.jquery.com/jquery-1.5.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var a= {};
+        $('#ViewQuestion').click(function () {
+            {% for q in questionnaire.question_list%}
+                document.write("question: {{ q.description }}&nbsp;&nbsp;");
+                document.write("answer type: {{ q.answer_data_type }}<br/>");
+            {% endfor %}
+        });
+    });
+</script>
 <head>
     <title></title>
 </head>
 <body>
-    Hi!!!
+            Thank you for creating Questionnaire.
+   <input type="button" value="View questionnaire" id="ViewQuestion"/>
 </body>
 </html>
