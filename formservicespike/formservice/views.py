@@ -1,5 +1,3 @@
-# Create your views here.
-
 from django.http import HttpResponseBadRequest, HttpResponse
 from django.shortcuts import render_to_response
 from formservice.models import Dictionary, Question
