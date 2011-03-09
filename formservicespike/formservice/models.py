@@ -1,5 +1,5 @@
 from uuid import uuid4
-from couchdb.mapping import TextField, IntegerField, DictField, ListField, Document
+from couchdb.mapping import TextField, IntegerField, DictField, ListField, Document, Mapping
 from django.db import models
 
 from formservice.connection import Connection
@@ -49,15 +49,25 @@ class Question(FormDocument):
     def check(self):
         return self.description
     
+class Questionnaire(FormDocument):
 
-#class Questionnaire(FormDocument):
-#    #question_list = ListField()
-#
-#class Questionnaire(FormDocument):
-#    question_list = ListField()
-#
-#    def __init__(self,q_list):
-#        self.question_list = q_list
+    """ Note the way I have written listfield.
+    Couldn't get it to understand the description by simply specifying the class name
+    Couldn't find much documentation supporting this.
+    Not happy"""
+
+    question_list = ListField(DictField(Mapping.build(
+            description = TextField(),
+            answer_data_type=IntegerField()
+            )))
+    description = TextField()
+
+    def __init__(self, *args, **kwargs):
+        FormDocument.__init__(self, *args, **kwargs)
+
+    def check(self):
+         return  self.question_list[0].description
+
 
 class Dictionary:
     dictionary = {"age":1,"name":2}

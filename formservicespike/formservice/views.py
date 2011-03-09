@@ -5,15 +5,21 @@ from django.shortcuts import render_to_response
 from formservice.models import Dictionary, Question
 
 def process_form(request):
+    d = Dictionary()
+    questionnaire = Questionnaire()
     if request.method == 'POST':
         query_dict = request.POST
-        d = Dictionary()
-        datatype =  query_dict.__getitem__("answer_type")
-        if not d.validate(datatype):
-            return HttpResponse("muhahahaha")
-        else:
-            q = Question(desc=query_dict.__getitem__("question"),ans_data_type=d.return_value(datatype))
-            q.save()
+#        for key,value in query_dict:
+
+
+
+#            if(key == "answer_type")
+#                datatype =  query_dict["answer_type"]
+#                if not d.validate(datatype):
+#                    return HttpResponse("error")
+#                else:
+#                q = Question(desc=query_dict["question"],ans_data_type=d.return_value(datatype))
+#            q.save()
         return HttpResponse("Thank you")
 
 def main_form(request):
